@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold mb-2">
               <span className="text-hacker-cyan">&lt;</span>
-              <span className="text-hacker-accent">HACKER</span>
+              <span className="text-hacker-accent">Scicolone.DEV</span>
               <span className="text-hacker-cyan">/&gt;</span>
             </h3>
             <p className="text-hacker-accent text-opacity-60 text-sm font-mono">
@@ -45,7 +45,7 @@ export default function Footer() {
             <h4 className="text-hacker-cyan font-bold mb-4">SOCIAL</h4>
             <div className="space-y-2">
               {[
-                { label: 'GitHub', handle: '@yourusername' },
+                { label: 'GitHub', handle: 'scicolone@yourusername' },
                 { label: 'LinkedIn', handle: '@yourlinkedin' },
                 { label: 'Twitter', handle: '@yourtwitter' },
               ].map((social) => (
