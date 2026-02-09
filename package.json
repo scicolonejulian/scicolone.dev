@@ -1,6 +1,7 @@
 {
   "name": "portfolio-hacker",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "A hacker/cyberpunk style portfolio built with Next.js, Tailwind CSS, and JavaScript",
   "scripts": {
     "dev": "next dev",
