@@ -1,29 +1,24 @@
 {
-  "name": "portfolio",
+  "name": "portfolio-vanilla",
   "version": "1.0.0",
-  "description": "A modern portfolio website built with Next.js",
+  "description": "A modern portfolio website built with Vanilla JavaScript, HTML, and CSS",
+  "main": "index.html",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md}\""
+    "dev": "npx http-server -p 8000 -c-1",
+    "build": "echo 'No build step needed for vanilla JS'",
+    "format": "prettier --write \"**/*.{js,html,css,md}\"",
+    "lint": "echo 'Configure ESLint if needed'"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "next": "^15.0.0",
-    "framer-motion": "^10.16.4",
-    "react-icons": "^4.12.0"
-  },
+  "keywords": [
+    "portfolio",
+    "vanilla-js",
+    "html",
+    "css",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.3.3",
-    "@types/node": "^20.10.5",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "tailwindcss": "^3.4.0",
-    "postcss": "^8.4.32",
-    "autoprefixer": "^10.4.16",
     "prettier": "^3.1.0"
   }
 }
