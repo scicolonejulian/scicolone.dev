@@ -14,22 +14,20 @@ Un moderno portafolio personal construido con **HTML5 puro**, **CSS3**, y **Vani
 - 📧 Formulario de contacto funcional
 - 🔗 Integración con redes sociales
 - 🎪 Scroll animations e interactividad
+- 🎯 Zero build configuration
 
 ## 📋 Requisitos Previos
 
 - Node.js 14+ (opcional, solo para dev server)
-- VS Code o algún editor de texto
 - Navegador moderno
+- Editor de texto (VS Code recomendado)
 
 ## 🔧 Instalación y Ejecución
 
-### Opción 1: Usar un servidor local (Recomendado)
+### Opción 1: Servidor local (Recomendado para desarrollo)
 
 ```bash
-# Instalar dependencias (solo Prettier)
 npm install
-
-# Iniciar servidor de desarrollo en puerto 8000
 npm run dev
 ```
 
@@ -39,7 +37,7 @@ Luego abre `http://localhost:8000` en tu navegador.
 
 Simplemente abre `index.html` en tu navegador (sin necesidad de servidor).
 
-**Nota:** Algunos navegadores requieren servidor local para módulos ES6.
+**Nota:** Algunos navegadores requieren servidor local para características modernas.
 
 ## 📁 Estructura del Proyecto
 
@@ -48,136 +46,53 @@ scicolone.dev/
 ├── index.html              # Archivo HTML principal
 ├── assets/
 │   ├── css/
-│   │   └── styles.css      # Estilos CSS (puro, sin Tailwind)
+│   │   └── styles.css      # Estilos CSS puro
 │   └── js/
-│       └── main.js         # Lógica JavaScript
+│       └── main.js         # Lógica JavaScript vanilla
 ├── public/
 │   ├── robots.txt          # Para SEO
-│   └── sitemap.xml         # Para SEO
+│   └── sitemap.xml         # Para sitemap
+├── vercel.json             # Configuración para Vercel
 ├── package.json            # Configuración del proyecto
 └── README.md               # Este archivo
 ```
 
 ## 🎨 Personalización
 
-### Cambiar nombre y información personal
+Ver [CUSTOMIZATION.md](CUSTOMIZATION.md) para instrucciones detalladas de personalización.
 
-Edita los siguientes elementos en `index.html`:
-- Línea ~12: `<title>Portfolio | Your Name</title>`
-- Línea ~39: `<h2 class="hero-title">` - Cambiar nombre
-- Línea ~81: `<a href="mailto:your@email.com">` - Cambiar email
-- Línea ~88: `<a href="tel:+1234567890">` - Cambiar teléfono
-- Línea ~95: Cambiar ubicación
+Cambios rápidos:
+- **Nombre**: Edita `index.html` línea ~39
+- **Proyectos**: Edita array en `assets/js/main.js` línea ~4
+- **Colores**: Edita CSS variables en `assets/css/styles.css` línea ~11
+- **Email**: Edita `index.html` línea ~195
 
-### Modificar proyectos
+## 🚀 Despliegue en Vercel
 
-Edita el array `projects` en `assets/js/main.js` (línea ~4):
+### Método 1: Recomendado (Automático)
 
-```javascript
-const projects = [
-  {
-    id: 1,
-    title: "Mi Proyecto",
-    description: "Descripción del proyecto",
-    tech: ["Tech1", "Tech2"],
-    icon: "🎨", // O emoji que prefieras
-    liveUrl: "https://...",
-    githubUrl: "https://github.com/...",
-  },
-  // más proyectos...
-];
+1. Sube a GitHub:
+```bash
+git push origin main
 ```
 
-### Cambiar colores
+2. Ve a [Vercel.com](https://vercel.com) y conecta tu repositorio
+3. Vercel detectará automáticamente que es un proyecto estático
+4. Haz clic en "Deploy"
 
-Edita las variables CSS en `assets/css/styles.css` (línea ~11):
-
-```css
-:root {
-  --primary-color: #3b82f6;    /* Azul principal */
-  --primary-dark: #2563eb;     /* Azul oscuro */
-  --accent: #3b82f6;           /* Color acentuado */
-  /* ... más colores */
-}
-```
-
-Colores populares:
-- Rojo: `#ef4444`, `#dc2626`
-- Verde: `#10b981`, `#059669`
-- Púrpura: `#a855f7`, `#7c3aed`
-- Naranja: `#f97316`, `#ea580c`
-
-### Cambiar fuente
-
-En `assets/css/styles.css`, línea ~23:
-
-```css
-font-family: "Tu Font", sans-serif;
-```
-
-O importa desde Google Fonts:
-
-```html
-<!-- En index.html, antes de </head> -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-```
-
-## 📱 Funcionalidades
-
-### Formulario de Contacto
-
-El formulario está totalmente funcional. Para enviar emails realmente:
-
-1. **Con Formspree** (Recomendado):
-   - Ve a [formspree.io](https://formspree.io)
-   - Crea un nuevo formulario
-   - Reemplaza `<form>` en `index.html`:
-   ```html
-   <form action="https://formspree.io/f/YOUR_ID" method="POST" id="contactForm">
-   ```
-
-2. **Con EmailJS**:
-   - Ve a [emailjs.com](https://emailjs.com)
-   - Obtén tus credenciales
-   - Añade el script en `index.html`:
-   ```html
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
-   ```
-   - Modifica `assets/js/main.js`:
-   ```javascript
-   const handleSubmit = (e) => {
-     e.preventDefault();
-     emailjs.send(...);
-   };
-   ```
-
-## 🚀 Deploy
-
-### Vercel (Recomendado)
+### Método 2: Vercel CLI
 
 ```bash
 npm install -g vercel
 vercel
 ```
 
-### Netlify
-
-1. Sube a GitHub
-2. Conecta en [Netlify](https://netlify.com)
-3. Haz clic en Deploy
-
-### GitHub Pages
+### Método 3: Netlify
 
 ```bash
-git subtree push --prefix . origin gh-pages
+npm install -g netlify-cli
+netlify deploy --prod --dir=.
 ```
-
-### Otras opciones
-
-- **AWS S3 + CloudFront**
-- **Firebase Hosting**
-- **DigitalOcean**
-- **Heroku** (con simple servidor)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -189,33 +104,38 @@ git subtree push --prefix . origin gh-pages
 ## 📊 Performance
 
 Este portafolio está optimizado para:
-- ⚡ Carga rápida (< 1s)
+- ⚡ Carga rápida (< 500ms)
 - 📱 Mobile-first responsive
 - ♿ Accesibilidad (WCAG)
 - 🔍 SEO-friendly
-- 💾 Bajo uso de datos
+- 💾 Bajo uso de datos (< 100KB)
+- 🌍 Funciona sin JavaScript (con graceful degradation)
 
-## 📝 Scripts Disponibles
+## 📦 Scripts Disponibles
 
 ```bash
-npm run dev       # Iniciar servidor de desarrollo
-npm run build     # Build (verificación)
-npm run format    # Formatear código
-npm run lint      # Linter (verificación)
+npm run dev       # Iniciar servidor de desarrollo (puerto 8000)
+npm run start     # Iniciar servidor a producción
+npm run format    # Formatear código con Prettier
 ```
+
+## 💡 Consejos
+
+- **Prueba responsivo**: DevTools (F12) → Mobile view
+- **Optimización SEO**: Actualiza `sitemap.xml` y `robots.txt`
+- **Formulario de contacto**: Ver [CUSTOMIZATION.md](CUSTOMIZATION.md) paso 5
+- **Imágenes**: Usa formato WebP para mejor performance
 
 ## 🚀 Próximas Mejoras Sugeridas
 
-- [ ] Agregar blog/artículos
-- [ ] Soporte para modo claro (Light Mode)
+- [ ] Blog/Artículos section
+- [ ] Soporte para modo claro (Light Mode toggle)
 - [ ] Galería de imágenes mejorada
-- [ ] Integración real con formulario de contacto
-- [ ] Estadísticas (Google Analytics)
-- [ ] Búsqueda (con Algolia)
-- [ ] Dark/Light theme toggle
-- [ ] Multi-idioma (i18n)
+- [ ] Integración real con correo
+- [ ] Analytics (Google Analytics)
+- [ ] Búsqueda (Algolia)
+- [ ] Internacionalización (i18n)
 - [ ] Service Worker (PWA)
-- [ ] Comentarios en blog
 
 ## 📄 Licencia
 
@@ -230,4 +150,5 @@ Contribuciones bienvenidas. Por favor abre un issue o crea un pull request.
 **Hecho con ❤️ usando Vanilla JavaScript**
 
 Para más información sobre personalización, ver [CUSTOMIZATION.md](CUSTOMIZATION.md)
+
 
