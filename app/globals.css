@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-hacker-darker text-hacker-accent font-mono;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 65, 0.03),
+      rgba(0, 255, 65, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  background-size: 100% 2px;
+  animation: scan 8s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 255, 65, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Cursor */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text x="0" y="24" font-size="24" fill="%2300ff41" font-family="monospace">▶</text></svg>') 0 0, auto;
+}
+
+/* Selection */
+::selection {
+  @apply bg-hacker-accent text-hacker-darker;
+}
+
+/* Links */
+a {
+  @apply relative transition-all duration-200;
+}
+
+a::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-px bg-hacker-accent transition-all duration-200;
+}
+
+a:hover::after {
+  @apply w-full shadow-neon;
+}
+
+/* Glitch effect for titles */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  animation: glitchBefore 0.3s infinite;
+  color: #00ffff;
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitchAfter 0.3s infinite;
+  color: #ff006e;
+  z-index: -2;
+}
+
+@keyframes glitchBefore {
+  0% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  20% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-2px, -2px);
+  }
+  40% {
+    clip-path: inset(30% 0 35% 0);
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    clip-path: inset(50% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  80% {
+    clip-path: inset(70% 0 5% 0);
+    transform: translate(2px, 2px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchAfter {
+  0% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  20% {
+    clip-path: inset(68% 0 20% 0);
+    transform: translate(2px, 2px);
+  }
+  40% {
+    clip-path: inset(46% 0 12% 0);
+    transform: translate(2px, -2px);
+  }
+  60% {
+    clip-path: inset(12% 0 58% 0);
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    clip-path: inset(38% 0 46% 0);
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+}
+
+/* Terminal lines effect */
+.terminal-line {
+  @apply border-b border-hacker-accent border-opacity-20;
+}
+
+/* Matrix rain effect */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.03;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      #00ff41 3px,
+      #00ff41 5px
+    );
+  animation: matrix-rain 20s linear infinite;
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Code highlight */
+code {
+  @apply bg-hacker-dark bg-opacity-50 px-2 py-1 rounded border border-hacker-accent border-opacity-30;
+  box-shadow: inset 0 0 5px rgba(0, 255, 65, 0.1);
+}
+
+/* Button styles */
+.btn-hacker {
+  @apply px-4 py-2 border border-hacker-accent text-hacker-accent font-mono text-sm transition-all duration-200;
+  box-shadow: 0 0 10px transparent;
+  background: transparent;
+}
+
+.btn-hacker:hover {
+  @apply bg-hacker-accent bg-opacity-10;
+  box-shadow: 0 0 10px #00ff41, inset 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.btn-hacker.active {
+  @apply bg-hacker-accent text-hacker-dark;
+  box-shadow: 0 0 20px #00ff41;
+}
+
+/* Form inputs */
+input, textarea, select {
+  @apply bg-hacker-dark border border-hacker-accent border-opacity-30 text-hacker-accent font-mono;
+  box-shadow: inset 0 0 5px rgba(0, 255, 65, 0.1);
+}
+
+input:focus, textarea:focus, select:focus {
+  @apply outline-none border-hacker-accent border-opacity-100;
+  box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.2), 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Placeholder */
+::placeholder {
+  @apply text-hacker-accent text-opacity-40;
+}

@@ -1,154 +1,188 @@
-# Portfolio Boilerplate - Vanilla JavaScript
+# 🖥️ Hacker Portfolio
 
-Un moderno portafolio personal construido con **HTML5 puro**, **CSS3**, y **Vanilla JavaScript** sin dependencias externas (excepto Font Awesome para iconos).
+A cyberpunk-styled portfolio website built with **Next.js**, **Tailwind CSS**, and **JavaScript**.
 
-## 🚀 Características
+```
+   ___                  _
+  / _ \___ ___ __  __  / |
+ / ___/ -_) -_) \ / / / /
+/_/   \__/\__/_\_\/_/ /_/
 
-- ✨ Diseño moderno y responsivo
-- 🎨 Animaciones suaves con CSS puro
-- 🌗 Tema oscuro elegante
-- 📱 Totalmente responsive (mobile, tablet, desktop)
-- ⚡ Performance optimizado (sin frameworks)
-- ⚙️ JavaScript vanilla sin dependencias
-- 🎯 Secciones: Hero, About, Projects, Contact, Footer
-- 📧 Formulario de contacto funcional
-- 🔗 Integración con redes sociales
-- 🎪 Scroll animations e interactividad
-- 🎯 Zero build configuration
+> system.initialize()
+$ PORTFOLIO_LOADED
+> access_level: PUBLIC
+```
 
-## 📋 Requisitos Previos
+## 🎨 Features
 
-- Node.js 14+ (opcional, solo para dev server)
-- Navegador moderno
-- Editor de texto (VS Code recomendado)
+- ✨ **Hacker/Cyberpunk** aesthetic with neon colors
+- 🎯 **High Performance** with Next.js 15
+- 💻 **Responsive Design** - Works on all devices
+- 🌈 **Neon Effects** - Glitch animations and terminal styling
+- ⚡ **Fast** - Optimized for speed
+- 🔒 **Secure** - Best practices implemented
+- 📱 **Mobile First** approach
+- 🎪 **Interactive** animations and effects
 
-## 🔧 Instalación y Ejecución
+## 🚀 Tech Stack
 
-### Opción 1: Servidor local (Recomendado para desarrollo)
+- **Framework:** Next.js 15
+- **Styling:** Tailwind CSS 3.4
+- **Language:** JavaScript (No TypeScript)
+- **Fonts:** Courier Prime (Monospace)
+- **Icons:** Unicode/Text-based
+
+## 📋 Prerequisites
+
+- Node.js 14+ 
+- npm or yarn
+
+## 🔧 Installation
 
 ```bash
+# Clone or navigate to the project
+cd scicolone.dev
+
+# Install dependencies
 npm install
+
+# Run development server
 npm run dev
 ```
 
-Luego abre `http://localhost:8000` en tu navegador.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-### Opción 2: Directamente en el navegador
-
-Simplemente abre `index.html` en tu navegador (sin necesidad de servidor).
-
-**Nota:** Algunos navegadores requieren servidor local para características modernas.
-
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 scicolone.dev/
-├── index.html              # Archivo HTML principal
-├── assets/
-│   ├── css/
-│   │   └── styles.css      # Estilos CSS puro
-│   └── js/
-│       └── main.js         # Lógica JavaScript vanilla
-├── public/
-│   ├── robots.txt          # Para SEO
-│   └── sitemap.xml         # Para sitemap
-├── vercel.json             # Configuración para Vercel
-├── package.json            # Configuración del proyecto
-└── README.md               # Este archivo
+├── app/
+│   ├── layout.jsx       # Root layout
+│   ├── page.jsx         # Home page
+│   └── globals.css      # Global styles
+├── components/
+│   ├── Navbar.jsx       # Navigation bar
+│   ├── Hero.jsx         # Hero section
+│   ├── About.jsx        # About section
+│   ├── Projects.jsx     # Projects section
+│   ├── Contact.jsx      # Contact form
+│   └── Footer.jsx       # Footer section
+├── package.json
+├── tailwind.config.js
+├── next.config.js
+└── vercel.json
 ```
 
-## 🎨 Personalización
+## 🎨 Customization
 
-Ver [CUSTOMIZATION.md](CUSTOMIZATION.md) para instrucciones detalladas de personalización.
+### Change Colors
 
-Cambios rápidos:
-- **Nombre**: Edita `index.html` línea ~39
-- **Proyectos**: Edita array en `assets/js/main.js` línea ~4
-- **Colores**: Edita CSS variables en `assets/css/styles.css` línea ~11
-- **Email**: Edita `index.html` línea ~195
+Edit the color scheme in `tailwind.config.js`:
 
-## 🚀 Despliegue en Vercel
-
-### Método 1: Recomendado (Automático)
-
-1. Sube a GitHub:
-```bash
-git push origin main
+```javascript
+colors: {
+  hacker: {
+    dark: '#0a0e27',      // Main background
+    darker: '#050812',    // Darker background
+    accent: '#00ff41',    // Main color (neon green)
+    cyan: '#00ffff',      // Cyan neon
+    pink: '#ff006e',      // Pink neon
+    purple: '#9d00ff',    // Purple neon
+  },
+}
 ```
 
-2. Ve a [Vercel.com](https://vercel.com) y conecta tu repositorio
-3. Vercel detectará automáticamente que es un proyecto estático
-4. Haz clic en "Deploy"
+### Change Personal Info
 
-### Método 2: Vercel CLI
+1. **Name/Title** - Edit `components/Navbar.jsx`
+2. **Hero Text** - Edit `components/Hero.jsx`
+3. **About Section** - Edit `components/About.jsx`
+4. **Projects** - Edit `components/Projects.jsx`
+5. **Contact Info** - Edit `components/Contact.jsx`
+
+### Add New Projects
+
+In `components/Projects.jsx`, add to the projects array:
+
+```javascript
+{
+  id: 4,
+  title: 'Your Project',
+  description: 'Project description',
+  tech: ['Tech1', 'Tech2'],
+  status: 'ACTIVE',
+  level: '█████',
+},
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
 
 ```bash
 npm install -g vercel
 vercel
 ```
 
-### Método 3: Netlify
+Or push to GitHub and connect to Vercel dashboard.
+
+### Netlify
 
 ```bash
 npm install -g netlify-cli
-netlify deploy --prod --dir=.
+netlify deploy --prod
 ```
 
-## 🛠️ Tecnologías Utilizadas
-
-- **HTML5** - Semántico y accesible
-- **CSS3** - Animaciones, Grid, Flexbox
-- **JavaScript Vanilla** - Sin dependencias
-- **Font Awesome** - Iconos (CDN)
-
-## 📊 Performance
-
-Este portafolio está optimizado para:
-- ⚡ Carga rápida (< 500ms)
-- 📱 Mobile-first responsive
-- ♿ Accesibilidad (WCAG)
-- 🔍 SEO-friendly
-- 💾 Bajo uso de datos (< 100KB)
-- 🌍 Funciona sin JavaScript (con graceful degradation)
-
-## 📦 Scripts Disponibles
+## 📦 Available Scripts
 
 ```bash
-npm run dev       # Iniciar servidor de desarrollo (puerto 8000)
-npm run start     # Iniciar servidor a producción
-npm run format    # Formatear código con Prettier
+npm run dev       # Start development server
+npm run build     # Build for production
+npm start         # Start production server
+npm run lint      # Run linter
+npm run format    # Format code with Prettier
 ```
 
-## 💡 Consejos
+## 🎯 Features Explained
 
-- **Prueba responsivo**: DevTools (F12) → Mobile view
-- **Optimización SEO**: Actualiza `sitemap.xml` y `robots.txt`
-- **Formulario de contacto**: Ver [CUSTOMIZATION.md](CUSTOMIZATION.md) paso 5
-- **Imágenes**: Usa formato WebP para mejor performance
+### Terminal Styling
+All components are styled to look like a hacker terminal with monospace fonts and command-line prompts.
 
-## 🚀 Próximas Mejoras Sugeridas
+### Glitch Effects
+Text has animated glitch effects for a cyberpunk feel.
 
-- [ ] Blog/Artículos section
-- [ ] Soporte para modo claro (Light Mode toggle)
-- [ ] Galería de imágenes mejorada
-- [ ] Integración real con correo
-- [ ] Analytics (Google Analytics)
-- [ ] Búsqueda (Algolia)
-- [ ] Internacionalización (i18n)
-- [ ] Service Worker (PWA)
+### Neon Colors
+- **Green** (#00ff41) - Primary accent
+- **Cyan** (#00ffff) - Secondary accent
+- **Pink** (#ff006e) - Tertiary accent
+- **Purple** (#9d00ff) - Additional accent
 
-## 📄 Licencia
+### Animations
+- **Glitch** - Text distortion effect
+- **Flicker** - Terminal flicker effect
+- **Scan** - Scanline effect across the page
+- **Matrix Rain** - Background matrix effect
 
-MIT - Siéntete libre de usar este código.
+## 🔗 Resources
 
-## 🤝 Contribuciones
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [React Documentation](https://react.dev)
 
-Contribuciones bienvenidas. Por favor abre un issue o crea un pull request.
+## 📝 License
+
+MIT - Feel free to use this code for your own portfolio.
+
+## 🤝 Contributing
+
+Contributions welcome! Feel free to fork and submit pull requests.
 
 ---
 
-**Hecho con ❤️ usando Vanilla JavaScript**
+**Built with ❤️ using Next.js & Tailwind CSS**
 
-Para más información sobre personalización, ver [CUSTOMIZATION.md](CUSTOMIZATION.md)
-
-
+```
+$ exit
+> connection closed
+> [404_Nothing_Illegal_Here.js]
+```

@@ -1,27 +1,24 @@
 {
-  "name": "portfolio-vanilla",
-  "version": "2.0.0",
-  "description": "A modern portfolio website built with Vanilla JavaScript, HTML, and CSS",
-  "main": "index.html",
+  "name": "portfolio-hacker",
+  "version": "1.0.0",
+  "description": "A hacker/cyberpunk style portfolio built with Next.js, Tailwind CSS, and JavaScript",
   "scripts": {
-    "dev": "npx http-server -p 8000 -c-1",
-    "start": "npx http-server -p 8000",
-    "format": "prettier --write \"**/*.{js,html,css,md}\""
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,css,md}\""
   },
-  "keywords": [
-    "portfolio",
-    "vanilla-javascript",
-    "html5",
-    "css3",
-    "responsive",
-    "no-dependencies"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "engines": {
-    "node": ">=14.0.0"
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^15.0.0"
   },
   "devDependencies": {
-    "prettier": "^3.1.0"
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.0",
+    "tailwindcss": "^3.4.0"
   }
 }
