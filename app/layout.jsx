@@ -4,6 +4,9 @@ export const metadata = {
   title: 'Hacker Portfolio - Full Stack Developer',
   description: 'Full Stack Developer with cybersecurity expertise. Building secure, fast, and scalable applications.',
   keywords: 'developer, hacker, cybersecurity, full-stack, next.js',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
