@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-2xl font-bold">
-            <span className="text-hacker-accent">&gt;_</span> Scicolone<span className="text-hacker-accent">.DEV</span>
+            <span className="text-hacker-accent">&gt;_</span> <span className="text-white">Scicolone</span><span className="text-hacker-accent">.DEV</span>
           </h1>
 
           {/* Menu */}
