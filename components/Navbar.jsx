@@ -26,7 +26,7 @@ export default function Navbar() {
           {/* Logo */}
           <h1 className="text-2xl font-bold">
             <span className="text-hacker-cyan">&lt;</span>
-            <span className="text-hacker-accent glitch" data-text="HACKER">HACKER</span>
+            <span className="text-hacker-accent glitch" data-text="Scicolone.DEV">Scicolone.DEV</span>
             <span className="text-hacker-cyan">/&gt;</span>
           </h1>
 
