@@ -1,9 +1,9 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Hacker Portfolio - Full Stack Developer',
-  description: 'Full Stack Developer with cybersecurity expertise. Building secure, fast, and scalable applications.',
-  keywords: 'developer, hacker, cybersecurity, full-stack, next.js',
+  title: 'SCICOLONE.DEV Portfolio - Full Stack Developer',
+  description: 'Full Stack Developer with IoT and eleectronics expertise. Building secure, fast, and scalable applications.',
+  keywords: 'developer, Electronics, full-stack, next.js',
   icons: {
     icon: '/favicon.svg',
   },
